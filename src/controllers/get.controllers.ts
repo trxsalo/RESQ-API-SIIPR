@@ -1,0 +1,69 @@
+
+import { Request, Response } from "express"
+import {connet} from '../database/database';
+import { QueryResult } from "pg";
+
+
+/**
+ * 
+ * Aqui se consulta a las base de datos para regresar la  informacion en un formato json
+ *  
+ */
+
+export const getEmpleados= async (req:Request, res:Response)=>{
+    const conn = await  connet();
+    const usuarios:QueryResult = await conn.query('SELECT * FROM empleado');
+    res.status(200).json(usuarios.rows );
+}
+
+
+export const getCargo= async (req:Request, res:Response)=>{
+    const conn = await  connet();
+    const cargo:QueryResult = await conn.query('SELECT * FROM cargo');
+    res.status(200).json(cargo.rows );
+}
+
+
+
+export const getEgreso= async (req:Request, res:Response)=>{
+    const conn = await  connet();
+    const cargo:QueryResult = await conn.query('SELECT * FROM cargo');
+    res.status(200).json(cargo.rows );
+}
+
+export const getIngreso= async (req:Request, res:Response)=>{
+    const conn = await  connet();
+    const ingreso:QueryResult = await conn.query('SELECT * FROM ingreso');
+    res.status(200).json(ingreso.rows );
+}
+
+
+export const getGrupoT= async (req:Request, res:Response)=>{
+    const conn = await  connet();
+    const grupo:QueryResult = await conn.query('SELECT * FROM grupo_terapeitico');
+    res.status(200).json(grupo.rows );
+}
+
+export const getLaboratorio= async (req:Request, res:Response)=>{
+    const conn = await  connet();
+    const laboratorio:QueryResult = await conn.query('SELECT * FROM laboratorio');
+    res.status(200).json(laboratorio.rows );
+}
+
+export const getLote= async (req:Request, res:Response)=>{
+    const conn = await  connet();
+    const lote:QueryResult = await conn.query('SELECT * FROM lote');
+    res.status(200).json(lote.rows );
+}
+
+export const getMedicamento = async (req:Request, res:Response)=>{
+    const conn = await  connet();
+    const medicamento:QueryResult = await conn.query('SELECT * FROM medicamento');
+    res.status(200).json(medicamento.rows );
+}
+
+export const getPresentacion= async (req:Request, res:Response)=>{
+    const conn = await  connet();
+    const pres:QueryResult = await conn.query('SELECT * FROM presentacion');
+    res.status(200).json(pres.rows );
+}
