@@ -13,7 +13,7 @@ import { QueryResult } from "pg";
 export const getEmpleados= async (req:Request, res:Response):Promise<Response>=>{
     const conn = await  connet();
     const usuarios:QueryResult = await conn.query('SELECT * FROM empleado');
-    return return res.status(200).json(usuarios.rows );
+    return res.status(200).json(usuarios.rows );
 }
 
 
