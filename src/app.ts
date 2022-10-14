@@ -1,7 +1,9 @@
 
 import express,{ Application} from "express";
 import morgan from "morgan";
-import rutas from './routes/index.route';
+import Inicio from './routes/index.routes'
+import get from './routes/get.routes'
+import post from './routes/post.routes'
 
 export class App{
 
@@ -29,6 +31,8 @@ export class App{
     }
 
     router(){
-        this.app.use(rutas);
+        this.app.use('/',Inicio);
+        this.app.use(get);
+        this.app.use(post);
     }
 }

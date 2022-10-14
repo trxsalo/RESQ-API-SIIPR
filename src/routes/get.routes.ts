@@ -22,3 +22,7 @@ rutas.get('/lote', getLote);
 rutas.get('/medicamento', getMedicamento);
 rutas.get('/presentacion', getPresentacion);
 
+
+
+export default rutas;
+

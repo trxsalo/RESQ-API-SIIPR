@@ -1,6 +1,11 @@
 import { Router } from "express";
-import {postUser} from '../controllers/post.controllers';
+import {cargo} from '../controllers/post.controllers';
 
 const ruta = Router();
 
+ruta.post('/cargo', cargo)
+
+
+
+export default ruta;
 
