@@ -17,12 +17,57 @@ const loginUser =[
 
 ]
 
-
-const postPresentacion=[
-    check('name')
+const postCargo = [
+    check('nombre')
         .exists()
         .not()
         .isEmpty()
 ]
 
+
+const postEgreso = [
+    check('fecha'),
+
+    check('descripcion')
+
+]
+
+
+
+
+const postPresentacion=[
+    check('nombre')
+        .exists()
+        .not()
+        .isEmpty()
+]
+
+
+const post= [
+    check('fecha')
+        .exists()
+        .isDate()
+        .isEmpty()
+        .not(),
+    check('descripcion')
+        .isEmpty()
+        .not()
+        .exists()
+]
+
+const empleado = [
+    check('cargoid')
+        .exists()
+        .not()
+        .isNumeric()
+        .isEmpty(),
+
+    check('ci')
+        .exists()
+        .isAlphanumeric()
+        .isEmpty()
+        .not(),
+    check('fullName')
+        
+]
 module.exports= {loginUser};
