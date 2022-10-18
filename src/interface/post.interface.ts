@@ -48,10 +48,11 @@ export interface Medicamento{
     nombre_producto:string
     producto:string
     composicion:string
-    grupo_terapeitico:number
+    grupo_terapeiticoid:number
     dosificacion:string
     indicacion:string
     contradicion:string
+    presentacionid:number
 }
 
 export interface Presentacion{
