@@ -28,8 +28,7 @@ ruta.post('/lote', lote);
 
 ruta.post('/medicamento', medicamento);
 
-ruta.route('/presentacion')
-        .post(presentacion)
+ruta.post('/presentacion',presentacion)
 
 
 

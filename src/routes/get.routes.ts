@@ -21,6 +21,7 @@ rutas.get('/ingreso', getIngreso);
 rutas.get('/lote', getLote);
 rutas.get('/medicamento', getMedicamento);
 rutas.get('/presentacion', getPresentacion);
+rutas.get('/laboratorio', getLaboratorio);
 
 
 

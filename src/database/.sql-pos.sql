@@ -37,55 +37,55 @@ DROP TABLE IF EXISTS Presentacion CASCADE
 
 CREATE TABLE Cargo
 (
-	CargoID integer NOT NULL,
-	Nombre varchar(50) NULL
+	CargoID SERIAL NOT NULL,
+	Nombre varchar(50) NOT  NULL
 )
 ;
 
 CREATE TABLE Egreso
 (
-	EgresoID integer NOT NULL,
-	Fecha date NULL,
-	Descripcion varchar(100) NULL
+	EgresoID SERIAL NOT NULL,
+	Fecha date NOT NULL,
+	Descripcion varchar(100) NOT NULL
 )
 ;
 
 CREATE TABLE Empleado
 (
-	EmpleadoID integer NOT NULL,
+	EmpleadoID SERIAL NOT NULL,
 	CargoID integer NULL,
-	CI varchar(50) NULL,
-	NombreC varchar(50) NULL,
-	ApellidoP varchar(50) NULL,
-	ApelledoM varchar(50) NULL,
-	Correo varchar(50) NULL,
-	Telefono varchar(50) NULL,
-	Usuario varchar(50) NULL,
-	Contrasenha varchar(100) NULL
+	CI varchar(50) NOT NULL,
+	NombreC varchar(50) NOT NULL,
+	ApellidoP varchar(50) NOT NULL,
+	ApelledoM varchar(50) NOT NULL,
+	Correo varchar(50) NOT NULL,
+	Telefono varchar(50) NOT NULL,
+	Usuario varchar(50) NOT NULL,
+	Contrasenha varchar(100) NOT NULL
 )
 ;
 
 CREATE TABLE Grupo_terapeitico
 (
-	Grupo_terapeiticoID integer NOT NULL,
-	Nombre varchar(50) NULL
+	Grupo_terapeiticoID SERIAL NOT NULL,
+	Nombre varchar(50) NOT NULL
 )
 ;
 
 CREATE TABLE Ingreso
 (
-	IngresoID integer NOT NULL,
-	EmpleadoID integer NULL,
-	Fecha date NULL,
-	Hora varchar(50) NULL
+	IngresoID SERIAL NOT NULL,
+	EmpleadoID integer NOT NULL,
+	Fecha date NOT NULL,
+	Hora varchar(50)NOT NULL
 )
 ;
 
 CREATE TABLE Laboratorio
 (
-	LaboratorioID integer NOT NULL,
-	Nombre varchar(50) NULL,
-	Correo varchar(50) NULL,
+	LaboratorioID SERIAL NOT NULL,
+	Nombre varchar(50) NOT NULL,
+	Correo varchar(50) NOT NULL,
 	Telefono varchar(50) NULL,
 	Direccion varchar(100) NULL
 )
@@ -93,31 +93,33 @@ CREATE TABLE Laboratorio
 
 CREATE TABLE Lote
 (
-	LoteID integer NOT NULL,
-	IngresoID integer NULL,
-	Fecha_Vencimiento varchar(50) NULL,
+	LoteID SERIAL NOT NULL,
+	IngresoID integer NOT NULL,
+	Fecha_Vencimiento varchar(50) NOT NULL,
 	MedicamentoID integer NULL,
-	Fecha_Produccion varchar(50) NULL,
+	Fecha_Produccion varchar(50) NOT NULL,
 	LaboratorioID integer NULL
 )
 ;
 
 CREATE TABLE Medicamento
 (
-	MedicamentoID integer NOT NULL,
-	Composicion varchar(50) NULL,
+	MedicamentoID SERIAL NOT NULL,
+	Nombre_Producto VARCHAR (50) NOT NULL,
+	Producto VARCHAR (50) NOT NULL,
+	Composicion varchar(100) NULL,
 	Grupo_terapeiticoID integer NULL,
-	Dosificacion varchar(50) NULL,
-	Indicacion varchar(50) NULL,
-	Contradicion varchar(50) NULL,
+	Dosificacion varchar(100) NULL,
+	Indicacion varchar(100) NULL,
+	Contradicion varchar(100) NULL,
 	PresentacionID integer NULL
 )
 ;
 
 CREATE TABLE Presentacion
 (
-	PresentacionID integer NOT NULL,
-	tipo varchar(50) NULL
+	PresentacionID SERIAL NOT NULL,
+	tipo varchar(100) NOT NULL
 )
 ;
 
