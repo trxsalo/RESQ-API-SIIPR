@@ -3,7 +3,7 @@ export interface Cargo{
 }
 
 export interface Egreso{
-    fecha:string | number 
+    fecha:string
     decripcion: string
 }
 
@@ -25,7 +25,7 @@ export interface Grupo_terapeutico{
 
 export  interface Ingreso{
     empleadoid:number
-    fecha: string | number | undefined
+    fecha: string 
     hora: string
 }
 
