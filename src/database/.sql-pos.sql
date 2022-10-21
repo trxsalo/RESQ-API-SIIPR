@@ -106,7 +106,7 @@ CREATE TABLE Medicamento
 (
 	MedicamentoID SERIAL NOT NULL,
 	Nombre_Producto VARCHAR (50) NOT NULL,
-	Producto VARCHAR (50) NOT NULL,
+	Productoid VARCHAR (50) NOT NULL,
 	Composicion varchar(100) NULL,
 	Grupo_terapeiticoID integer NULL,
 	Dosificacion varchar(100) NULL,
@@ -122,6 +122,8 @@ CREATE TABLE Presentacion
 	tipo varchar(100) NOT NULL
 )
 ;
+
+
 
 /* Create Primary Keys, Indexes, Uniques, Checks */
 

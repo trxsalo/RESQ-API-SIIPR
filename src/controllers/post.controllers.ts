@@ -155,7 +155,7 @@ export var  presentacion = async (res:Response, req:Request):Promise<Response> =
         })
     }
     catch(e){
-        return  res.status(404).json({
+        return  res.json({
             message: 'Error'
         })
     }

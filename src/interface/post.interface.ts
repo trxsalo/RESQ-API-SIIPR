@@ -8,7 +8,7 @@ export interface Egreso{
 }
 
 export interface Empleado {
-    cargoid: number
+    cargoid: undefined
     ci: string
     nombrec:string
     apellidop:string
@@ -36,26 +36,26 @@ export interface Laboratorio{
     direccion:string
 }
 export interface Lote{
+    ingresoid: undefined
     fecha_vencimineto:string
+    medicamentoid:undefined
     fecha_produccion:string
-    ingresoid: number
-    laboratorioid: number
-    medicamentoid:number
-    
+    laboratorioid: undefined
 }
 
 export interface Medicamento{
-    nombre_producto:string
-    producto:string
     composicion:string
-    grupo_terapeiticoid:number
+    grupo_terapeiticoid:undefined
     dosificacion:string
     indicacion:string
     contradicion:string
-    presentacionid:number
+    nombre_medicamento: string
+    presentacionid: undefined
+    productoid:undefined
+
 }
 
 export interface Presentacion{
-    tipo:string
+    tipo:undefined
 }
 
