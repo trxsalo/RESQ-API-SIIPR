@@ -1,3 +1,5 @@
+import exp from "constants"
+
 export interface Cargo{
     nombre:string
 }
@@ -36,26 +38,29 @@ export interface Laboratorio{
     direccion:string
 }
 export interface Lote{
-    ingresoid: undefined
+    ingresoid: number
     fecha_vencimineto:string
-    medicamentoid:undefined
+    medicamentoid:number
     fecha_produccion:string
-    laboratorioid: undefined
+    laboratorioid: number
 }
 
 export interface Medicamento{
     composicion:string
-    grupo_terapeiticoid:undefined
+    grupo_terapeiticoid:number
     dosificacion:string
     indicacion:string
     contradicion:string
     nombre_medicamento: string
-    presentacionid: undefined
-    productoid:undefined
+    presentacionid: number
+    productoid:number
 
 }
 
-export interface Presentacion{
-    tipo:string
+export interface postPresentacion{
+    tipo: undefined
 }
 
+export interface Producto {
+    nombre:string
+}
