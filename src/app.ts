@@ -4,6 +4,7 @@ import morgan from "morgan";
 import Inicio from './routes/index.routes'
 import get from './routes/get.routes'
 import post from './routes/post.routes'
+import { body } from "express-validator";
 
 export class App{
 
@@ -19,7 +20,7 @@ export class App{
     middleware(){
         this.app.use(morgan('dev')); 
         this.app.use(express.json());
-        this.app.use(express.urlencoded({extended:false}));
+        //this.app.use(express.urlencoded({extended:false}));
     }
     configuracion(){
 

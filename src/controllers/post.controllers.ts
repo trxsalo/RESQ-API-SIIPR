@@ -13,7 +13,7 @@ import {
         Presentacion,
         } from '../interface/post.interface'
 
-export var cargo = async (res:Response, req:Request)=>{
+export const cargo = async (req:Request,res:Response )=>{
     try{
         const conn = await connet();
         const cargo:Cargo = req.body();
@@ -30,7 +30,7 @@ export var cargo = async (res:Response, req:Request)=>{
 
 
 }
-export var egreso = async (res:Response, req:Request)=>{
+export const egreso = async (req:Request,res:Response)=>{
     try{
         const conn = await connet();
         const egreso:Egreso = req.body();
@@ -45,7 +45,7 @@ export var egreso = async (res:Response, req:Request)=>{
         })
     }
 }
-export var empleado = async (res:Response, req:Request)=>{
+export const empleado = async (req:Request,res:Response)=>{
     try{
         const conn = await connet();
         const empleado:Empleado = req.body;
@@ -61,7 +61,7 @@ export var empleado = async (res:Response, req:Request)=>{
     }
 
 }
-export var grupo_terapeitico = async (res:Response, req:Request)=>{
+export const grupo_terapeitico = async (req:Request,res:Response)=>{
     try{
     const conn = await connet();
     const grupo:Grupo_terapeutico = req.body;
@@ -78,7 +78,7 @@ export var grupo_terapeitico = async (res:Response, req:Request)=>{
 
 
 }
-export var ingreso = async (res:Response, req:Request)=>{
+export const ingreso = async (req:Request,res:Response)=>{
     try{
         const conn = await connet();
         const ingreso:Ingreso = req.body;
@@ -95,7 +95,7 @@ export var ingreso = async (res:Response, req:Request)=>{
 
 
 }
-export var laboratorio = async (res:Response, req:Request)=>{
+export const laboratorio = async (req:Request,res:Response)=>{
     try{
         const conn = await connet();
         const laboratorio:Laboratorio = req.body;
@@ -112,7 +112,7 @@ export var laboratorio = async (res:Response, req:Request)=>{
 
 
 }
-export var lote = async (res:Response, req:Request)=>{
+export const lote = async ( req:Request,res:Response)=>{
     try{
         const conn = await connet();
         const lote:Lote = req.body;
@@ -128,7 +128,7 @@ export var lote = async (res:Response, req:Request)=>{
     }
 
 }
-export var medicamento = async (res:Response, req:Request)=>{
+export const medicamento = async (req:Request,res:Response)=>{
     try{ 
         const conn = await connet();
         const medicamento:Medicamento = req.body;
@@ -145,19 +145,16 @@ export var medicamento = async (res:Response, req:Request)=>{
 
 }
 
-export var  presentacion = async (res:Response, req:Request):Promise<Response> =>{
+export async function presentacion( req:Request,res:Response):Promise<Response>{
     try{
         const conn = await connet();
         const presentacion:Presentacion = req.body;
-        await conn.query('INSERT INTO  presentacion SET ?', [presentacion]);
-        return res.json({
-            message: 'Post Creado'
-        })
+        const d:QueryResult =  await conn.query('INSERT INTO  presentacion SET ?', [presentacion]);
+        return res.json(d.rows);
     }
     catch(e){
         return  res.json({
-            message: 'Error'
+            message:'Error'
         })
     }
-
 }

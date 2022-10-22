@@ -31,10 +31,4 @@ ruta.post('/medicamento', medicamento);
 ruta.post('/presentacion',presentacion)
 
 
-
-
-
-
-
 export default ruta;
-

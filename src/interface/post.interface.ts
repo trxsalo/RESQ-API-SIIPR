@@ -56,6 +56,6 @@ export interface Medicamento{
 }
 
 export interface Presentacion{
-    tipo:undefined
+    tipo:string
 }
 
