@@ -8,6 +8,7 @@ import {cargo,
         lote,
         medicamento,
         presentacion,
+        producto
         } from '../controllers/post.controllers';
 
 const ruta = Router();
@@ -28,7 +29,7 @@ ruta.post('/lote', lote);
 
 ruta.post('/medicamento', medicamento);
 
-ruta.post('/presentacion',presentacion)
+ruta.post('/presentacion',presentacion);
 
-
+ruta.post("/producto", producto);
 export default ruta;

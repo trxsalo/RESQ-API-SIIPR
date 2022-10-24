@@ -205,13 +205,28 @@ export const postMedicamento =[
         .not()
         .isNumeric()
         .isEmpty(),
-
+    check("productoid")
+        .exists()
+        .not()
+        .isNumeric()
+        .isEmpty(),
         (req:Request,res:Response,next:NextFunction)=>{
         validateResult(req,res,next)
     }
 ]
 
 export const postPresentacion=[
+    check('tipo')
+        .exists()
+        .not()
+        .isEmpty(),
+    (req:Request,res:Response,next:NextFunction)=>{
+        validateResult(req,res,next)
+    }
+    
+]
+
+export const posProducto=[
     check('nombre')
         .exists()
         .not()
