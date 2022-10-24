@@ -19,7 +19,7 @@ ruta.post('/egreso', egreso);
 
 ruta.post('/empleado', empleado);
 
-ruta.post('/grupo_t', grupo_terapeitico);
+ruta.post('/grupoTerapeutico', grupo_terapeitico);
 
 ruta.post('/ingreso', ingreso);
 

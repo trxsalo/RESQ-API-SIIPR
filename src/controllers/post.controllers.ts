@@ -54,7 +54,7 @@ export const grupo_terapeitico = async (req:Request,res:Response):Promise<Respon
     try{
     const conn = await connet();
     const {nombre} = req.body;
-    await conn.query("INSERT INTO  grupo_tepeitico (nombre)  values ($1)", [nombre]);
+    await conn.query("INSERT INTO  grupo_terapeitico (nombre)  values ($1)", [nombre]);
     return res.status(200).json({
         message: 'Post Creado'
     });

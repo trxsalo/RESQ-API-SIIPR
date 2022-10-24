@@ -134,6 +134,21 @@ export const getMedicamento = async (req:Request, res:Response):Promise<Response
     }
 }
 
+export const getProducto= async (req:Request, res:Response):Promise<Response>=>{
+
+    try {
+        const conn = await  connet();
+        const pres:QueryResult = await conn.query('SELECT * FROM producto');
+        return res.status(200).json(pres.rows );
+    }
+
+    catch(e){
+        return res.status(500).json({
+            message: 'Error Interno'
+        })
+    }
+}
+
 export const getPresentacion= async (req:Request, res:Response):Promise<Response>=>{
 
     try {
