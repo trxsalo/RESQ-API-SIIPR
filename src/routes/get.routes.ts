@@ -1,15 +1,15 @@
 import { Router } from "express";
 import {
-    getEmpleados,
-    getCargo,
-    getEgreso,
-    getGrupoT,
-    getIngreso,
-    getLaboratorio,
-    getLote,
-    getMedicamento,
-    getPresentacion,
-    getProducto
+        getEmpleados,
+        getCargo,
+        getEgreso,
+        getGrupoT,
+        getIngreso,
+        getLaboratorio,
+        getLote,
+        getMedicamento,
+        getPresentacion,
+        getProducto
 } from '../controllers/get.controllers'
 
 import {Empleados,
@@ -22,10 +22,9 @@ import {Empleados,
         Medicamento,
         Producto,
         Presentacion} 
-        from "../controllers/get.controllers.params"
-import ruta from "./post.routes";
+from "../controllers/get.controllers.params"
 
-        const rutas = Router();
+const rutas = Router();
 
 rutas.get('/empleado', getEmpleados);
 rutas.get('/empleado/:getId', Empleados);

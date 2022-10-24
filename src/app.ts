@@ -4,6 +4,7 @@ import morgan from "morgan";
 import Inicio from './routes/index.routes'
 import get from './routes/get.routes'
 import post from './routes/post.routes'
+import delet from "./routes/delete.routes"
 import { body } from "express-validator";
 
 export class App{
@@ -35,5 +36,6 @@ export class App{
         this.app.use('/',Inicio);
         this.app.use(get);
         this.app.use(post);
+        this.app.use(delet);
     }
 }
